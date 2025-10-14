@@ -2,7 +2,7 @@
 
 ## AndroidStudioを完全アンインストールする
 AndroidStudioを完全にアンインストールするには、AndroidStudio本体だけでなく、下記も消さなければならない。
-- SDK Folder：/Users/aoi/Library/Android/sdk
-- AndroidStudio設定フォルダ：/Users/aoi/Library/Application Support/Google
+- SDK Folder：/Users/ユーザー名/Library/Android/sdk
+- AndroidStudio設定フォルダ：/Users/ユーザー名/Library/Application Support/Google
 - .androidフォルダ：/Users/ユーザー名/.android
-- .gradleフォルダ
+- .gradleフォルダ：/Users/ユーザー名/.gradle
