@@ -3,6 +3,7 @@ package com.example.fragmaentsample
 
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.SimpleAdapter
 import androidx.fragment.app.Fragment
@@ -53,5 +54,18 @@ class MenuListFragment : Fragment(R.layout.fragment_menu_list) { // 1
             SimpleAdapter(activity, menuList, android.R.layout.simple_list_item_2, from, to)
 
         lvMenu.adapter = adapter
+    }
+
+    private inner class ListItemClickListener : AdapterView.OnItemClickListener {
+        override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+            // タップされた行のデータを取得。SimpleAdapterでは1行分のデータはMutableMap型
+            val item = parent.getItemAtPosition(position) as MutableMap<String, String>
+
+            // 定食名と金額を取得
+            val menuName = item["name"]
+            val menuPrice = item["price"]
+
+            // 引き継ぎデータをまとめて格納できるBundleオブジェクトを生成
+        }
     }
 }
