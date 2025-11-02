@@ -54,6 +54,9 @@ class MenuListFragment : Fragment(R.layout.fragment_menu_list) { // 1
             SimpleAdapter(activity, menuList, android.R.layout.simple_list_item_2, from, to)
 
         lvMenu.adapter = adapter
+
+        // リスナの登録
+        lvMenu.onItemClickListener = ListItemClickListener()
     }
 
     private inner class ListItemClickListener : AdapterView.OnItemClickListener {
@@ -66,6 +69,24 @@ class MenuListFragment : Fragment(R.layout.fragment_menu_list) { // 1
             val menuPrice = item["price"]
 
             // 引き継ぎデータをまとめて格納できるBundleオブジェクトを生成
+            val bundle = Bundle() // 1
+
+            // Bundleオブジェクトに引き継ぎデータを格納
+            bundle.putString("menuName", menuName) // 2
+            bundle.putString("menuPrice", menuPrice) // 2
+
+            // フラグメントトランザクションの開始
+            // フラグメントトランザクション？：複数のフラグメント操作（追加・削除・置換など）を、1つのまとまり（取引）として実行する 仕組み
+            val transaction = parentFragmentManager.beginTransaction() // 3
+            // フラグメントトランザクションが正しく動作するように設定
+            transaction.setReorderingAllowed(true) // 4
+            // 現在の表示内容をバックスタックに追加
+            // バックスタック？：フラグメントの操作履歴を蓄積する場所。Androidは「画面遷移の履歴」をスタック構造（LIFO：あと入れ先出し）で管理している。
+            transaction.addToBackStack("Only List") // 5
+            // fragmentMainContainerのフラグメントを注文完了フラグメントに置き換え。
+            transaction.replace(R.id.fragmentMainContainer, MenuThanksFragment::class.java, bundle) // 6
+            // フラグメントトランザクションのコミット
+            transaction.commit() // 7
         }
     }
 }

@@ -22,6 +22,10 @@ class MenuThanksFragment : Fragment(R.layout.fragment_menu_thanks) {
         val tvMenuName = view.findViewById<TextView>(R.id.tvMenuName)
         val tvMenuPrice = view.findViewById<TextView>(R.id.tvMenuPrice)
 
+        // TextViewnに定食名と金額を表示
+        tvMenuName.text = menuName
+        tvMenuPrice.text = menuPrice
+
         // 戻るボタンを取得
         val btBackButton = view.findViewById<Button>(R.id.btThxBack)
         // 戻るボタンにリスナを登録
