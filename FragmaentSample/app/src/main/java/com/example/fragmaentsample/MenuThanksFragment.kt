@@ -22,7 +22,7 @@ class MenuThanksFragment : Fragment(R.layout.fragment_menu_thanks) {
         val tvMenuName = view.findViewById<TextView>(R.id.tvMenuName)
         val tvMenuPrice = view.findViewById<TextView>(R.id.tvMenuPrice)
 
-        // TextViewnに定食名と金額を表示
+        // TextViewに定食名と金額を表示
         tvMenuName.text = menuName
         tvMenuPrice.text = menuPrice
 
@@ -38,7 +38,25 @@ class MenuThanksFragment : Fragment(R.layout.fragment_menu_thanks) {
     // androidのイベントリスナーは引数に、関数を渡すのはNG、クラスを渡す。だから関数ではなくクラス。
     private inner class ButtonClickListener : View.OnClickListener {
         override fun onClick(view: View) {
-            parentFragmentManager.popBackStack() // 2
+            activity?.let { // 1
+                val fragmentMainContainer = it.findViewById<View>(R.id.fragmentMainContainer) // 2
+                // fragmentMainContainer が存在するなら
+                if(fragmentMainContainer != null) { // 3
+                    parentFragmentManager.popBackStack()
+                } else {
+                    // フラグメントトランザクションの開始
+                    val transaction = parentFragmentManager.beginTransaction() // 5
+
+                    // フラグメントトランザクションが正しく動作するように設定
+                    transaction.setReorderingAllowed(true) // 6
+
+                    // 自分自身を削除
+                    transaction.remove(this@MenuThanksFragment) // 7
+
+                    // フラグメントトランザクションのコミット
+                    transaction.commit()
+                }
+            }
         }
      }
 }
