@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">ToolbarSample</string>
+    <string name="app_name">ツールバーのサンプル</string>
+    <string name="tv_article">
+        テキスト\nテキスト\nテキスト\n
+        テキスト\nテキスト\nテキスト\n
+        テキスト\nテキスト\nテキスト\n
+        テキスト\nテキスト\nテキスト\n
+        テキスト\nテキスト\nテキスト\n
+        テキスト\nテキスト\nテキスト\n
+        テキスト\nテキスト\nテキスト\n
+        テキスト\nテキスト\nテキスト\n
+        テキスト\nテキスト\nテキスト\n
+    </string>
+    <string name="toolbar_title">Material!</string>
+    <string name="toolbar_subtitle">ツールバーを使用</string>
 </resources>
