@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/flContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingStart="1dp"
+    android:paddingTop="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ctNoResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:paddingLeft="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="230dp"
+            android:focusable="false"
+            android:paddingTop="@dimen/my_list_padding_no_data_top"
+            android:paddingBottom="@dimen/my_list_padding_no_data_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/my_list_img_no_data"
+                android:layout_height="@dimen/my_list_img_no_data"
+                android:src="@drawable/ic_fav_no_data"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvContentNoData1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/my_list_margin_start_no_data"
+                    android:text="@string/my_list_text_no_data"
+                    android:textColor="@color/warm_grey_two"
+                    android:textSize="@dimen/my_list_text_size_no_data" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvContentNoData2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/my_list_margin_start_no_data"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/my_list_text_no_data1"
+                    android:textColor="@color/warm_grey_two"
+                    android:textSize="@dimen/my_list_text_size_no_data1" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleRecommendContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:paddingStart="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="4dp"
+            android:text="@string/mylist_root_recommend_title"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout13" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
