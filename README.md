@@ -12,6 +12,7 @@ android {
     }
 }
 ```
+または、
 ビルド時に、例えば、`activity_main.xml`に対して、`ActivityMainBinding`クラスが自動生成される。
 
 ### 実装手順2: 実装

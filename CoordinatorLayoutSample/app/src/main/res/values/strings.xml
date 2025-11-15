@@ -13,4 +13,5 @@
     </string>
     <string name="toolbar_title">Material!</string>
     <string name="toolbar_subtitle">ツールバーを使用</string>
+    <string name="fab_desc">メール送信</string>
 </resources>
