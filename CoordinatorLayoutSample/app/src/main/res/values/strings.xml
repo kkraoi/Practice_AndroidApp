@@ -14,4 +14,40 @@
     <string name="toolbar_title">Material!</string>
     <string name="toolbar_subtitle">ツールバーを使用</string>
     <string name="fab_desc">メール送信</string>
+
+    <string-array name="lv_menu">
+        <item>ホワイトレディ</item>
+        <item>バラライカ</item>
+        <item>XYZ</item>
+        <item>ニューヨーク</item>
+        <item>マンハッタン</item>
+        <item>ミシシッピミュール</item>
+        <item>ブルーハワイ</item>
+        <item>マイタイ</item>
+        <item>マティーニ</item>
+        <item>ブルームーン</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+        <item>モヒート</item>
+    </string-array>
 </resources>
