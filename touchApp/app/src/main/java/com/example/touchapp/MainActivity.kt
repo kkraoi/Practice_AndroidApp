@@ -24,17 +24,11 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
          setContentView(R.layout.activity_main)
 
-        val et: EditText = findViewById(R.id.et)
-        val btnStart: Button = findViewById(R.id.btnStart)
+        val myView : MyView = findViewById(R.id.myView)
+        val btnClear : Button = findViewById(R.id.btnClear)
 
-        // 画面遷移
-        btnStart.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-
-            intent.putExtra("MY_NAME", et.text.toString())
-
-            startActivity(intent)
+        btnClear.setOnClickListener {
+            myView.clearCanvas()
         }
-
     }
 }
