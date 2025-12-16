@@ -24,11 +24,34 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
          setContentView(R.layout.activity_main)
 
-        val myView : MyView = findViewById(R.id.myView)
-        val btnClear : Button = findViewById(R.id.btnClear)
+        val tvScore : TextView = findViewById(R.id.tvScrore)
+        val btnMinus: Button = findViewById(R.id.btnMinus)
+        val btnPlus: Button = findViewById(R.id.btnPlus)
 
-        btnClear.setOnClickListener {
-            myView.clearCanvas()
+        var num = 0;
+
+        btnPlus.setOnClickListener {
+            num += 1
+
+            if(num == 5) {
+                val intent = Intent(this, GameClear::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                tvScore.text = num.toString()
+            }
+        }
+
+        btnMinus.setOnClickListener {
+            num -= 1
+
+            if(num == -5) {
+                val intent = Intent(this, GameOver::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                tvScore.text = num.toString()
+            }
         }
     }
 }
